@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+:root{
+    /*color*/
+    --bg-color: #0c0c0c;
+    --color: #fdfafa;
+    --bg-fill: #f0f0f0;
+    --bg-food: #ff0000;
+    --modal-bg: rgba(0, 0, 0, 0.8);
+
+    /*spacing*/
+    --space-xs :4px;
+    --space-sm :8px;
+    --space-med :16px;
+    --space-lr :24px;
+    --space-xl : 32px;
+    --space-2xl :40px;
+    --space-3xl :48px;
+    /* Border/*/
+
+    --border-primary-color : #333333;
+
+    /*Border Radius*/
+    --border-radius-xs:4px;
+        --border-radius-sm:8px;
+    --border-radius-md:12px;
+    --border-radius-lg:16px;
+        --border-radius-xl:24px;
+
+
+
+    
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-color);
+    color: var(--color);
+    font-family: system-ui, -apple-system, sans-serif;
+}
+main {
+    height: 100%;
+    width: 100%;
+}
+
+section {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-2xl);
+    gap: var(--space-xl);
+
+}
+section .infos{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.info{
+
+    padding: var(--space-sm) var(--space-med);
+    border: 1px solid var(--border-primary-color);
+    border-radius: var(--border-radius-sm);
+}
+.board{
+    border: 1px solid var(--border-primary-color);
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(50px,1fr));
+    grid-template-rows: repeat(auto-fill,minmax(50px,1fr));
+    
+
+
+}
+.block{
+    border-radius: 50%;
+    border: 1px solid var(--border-primary-color);
+}
+.fill{
+    background-color: var(--bg-fill);
+}
+.food{
+    background-color: var(--bg-food);
+}
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--modal-bg);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.startgame, .gameover{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lr);
+}
+.btn {
+    padding: var(--space-med) var(--space-lr);
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn:hover {
+    transform: scale(1.1);
+}
+.game-over-modal {
+    display: none;
+}
